@@ -72,6 +72,8 @@
                 - The best model when run with 100 epochs produced:
                     - Accuracy: `72.61%`
                     - Loss: `56.2%`
+            - `AlphabetSoupCharity_Optimized_V2.h5`
+            - `AlphabetSoupCharity_Optimized_V3.h5`
 - Were you able to achieve the target model performance?
 - What steps did you take in your attempts to increase model performance?
 
