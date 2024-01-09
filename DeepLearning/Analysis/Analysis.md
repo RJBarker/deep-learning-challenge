@@ -69,11 +69,22 @@
             - `AlphabetSoupCharity_Optimized_V1.h5` - This tuner ran the following options:
                 - 1-5 Hidden Layers
                 - Up to 80 nodes in the input layer, and up to 40 nodes in the hidden layers
-                - The best model when run with 100 epochs produced:
+                - The best model when ran with 100 epochs produced:
                     - Accuracy: `72.61%`
                     - Loss: `56.2%`
             - `AlphabetSoupCharity_Optimized_V2.h5`
+                - 6-10 Hidden Layers
+                - Up to 80 nodes in the input layer, and up to 40 nodes in the hidden layers
+                - The best model when ran with 100 epochs produced:
+                    - Accuracy: `72.33%`
+                    - Loss: `56.08%`
             - `AlphabetSoupCharity_Optimized_V3.h5`
+                - 1-5 Hidden Layers - Due to `V2` model having a slightly worse accuracy score compared to `V1`, I've reverted back to only 1-5 layers.
+                - Up to 160 nodes in the input layer, and up to 100 nodes in the hidden layers
+                    - I've increased the maximum size of nodes per layer to see if this improves the accuracy performance.
+                - The best model when ran with 100 epochs produced:
+                    - Accuracy: ``
+                    - Loss: ``
 - Were you able to achieve the target model performance?
 - What steps did you take in your attempts to increase model performance?
 
