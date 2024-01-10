@@ -46,6 +46,9 @@
     - There are two variables that were removed from the dataset due to being neither targets nor features. These columns are:
         - `EIN` - A unique reference number given to each organization requesting/receiving funding
         - `NAME` - The name of the organization making a request/receiving funding from the foundation
+<br/>
+<br/>
+<hr/>
 
 ### Compiling, Training, and Evaluating the Model
 
@@ -60,6 +63,8 @@
         - The initial model resulted in:
             - Accuracy: `72.48%`
             - Loss: `0.5795`
+        - Model Summary:
+            - <img src="../Assets/initial_v1_summary.png" width="500px"></img>
     - Model Optimization:
         - My attempt to optimize the model made use of the `keras_tuner` library
         - This provides the ability to test a number of different options for the model, including:
@@ -67,6 +72,8 @@
             - How many neurons per layer
             - Varying activation functions
             - Ultimatley outputting the parameters which worked best for model accuracy
+        - Example of the `keras_tuner` model:
+            - <img src="../Assets/keras_tuner.png" width="500px"></img>
         - I ran three different optimization models:
             - `AlphabetSoupCharity_Optimized_V1.h5` - This tuner ran the following options:
                 - 1-5 Hidden Layers
@@ -77,6 +84,8 @@
                 - The best model when ran with 100 epochs produced:
                     - Accuracy: `72.61%`
                     - Loss: `0.562`
+                - Model Summary:
+                    - <img src="../Assets/optimized_v1_summary.png" width="500px"></img>
             - `AlphabetSoupCharity_Optimized_V2.h5` - This tuner ran the following options:
                 - 6-10 Hidden Layers
                 - Activation functions either:
@@ -86,6 +95,8 @@
                 - The best model when ran with 100 epochs produced:
                     - Accuracy: `72.33%`
                     - Loss: `0.5608`
+                - Model Summary:
+                    - <img src="../Assets/optimized_v2_summary.png" width="500px"></img>
             - `AlphabetSoupCharity_Optimized_V3.h5` - This tuner ran the following options:
                 - 1-5 Hidden Layers - Due to `V2` model having a slightly worse accuracy score compared to `V1`, I've reverted back to only 1-5 layers.
                 - Activation functions either:
@@ -96,6 +107,8 @@
                 - The best model when ran with 100 epochs produced:
                     - Accuracy: `72.38%`
                     - Loss: `0.6085`
+                - Model Summary:
+                    - <img src="../Assets/optimized_v3_summary.png" width="500px"></img>
 
 - **Were you able to achieve the target model performance?**
     - Unfortunatley I was not able to achieve the target model performance.
@@ -103,7 +116,9 @@
         - A accuracy score of: `72.61%`
         - A loss value of: `0.562`
     - The Model summary:
-        - 
+        - <img src="../Assets/optimized_v1_summary.png" width="500px">
+    - The Model results:
+        - <img src="../Assets/optimized_v1_results.png" width="500px">
 
 - **What steps did you take in your attempts to increase model performance?**
     - As you can see from the `Model Optimization` section above, I used the Keras_tuner library to create three different tuner programs.
@@ -118,10 +133,11 @@
 ## Summary
 
 - **Summary of Results**
-    - Overall the deep learning model did give near 73% accuracy on a dataset with many dimensions and with some complexity
+    - Overall the deep learning model did give near 73% accuracy on a dataset with many dimensions and with some complexity.
     - Whilst this didn't quite meet the desired performance goal of 75%, the optimization resulted in a decrease for the number of neuron's required with only one additional layer required, compared to my initial model
 
 - **Alternative Model**
-    - An alternative model to the one used within my analysis is the Random Forest algorithm
+    - An alternative model to the one used within my analysis is the `Random Forest` algorithm
     - This model is widely used within the finance industry
-    - The model can be easily scaled to large datasets, is typically good at not overfitting to data, 
+    - The model can be easily scaled to large datasets, is typically good at not overfitting to data, and is resillient to noisy data
+    - The random forest model works by creating random predictions from decision trees and creates an average of these results to build a model
